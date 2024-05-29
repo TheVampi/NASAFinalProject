@@ -1,0 +1,36 @@
+.scroll-bar:vertical {
+    -fx-background-color: transparent;
+}
+
+.scroll-bar:horizontal {
+    -fx-background-color: transparent;
+}
+
+.scroll-bar .thumb {
+    -fx-background-color: #6200EE; /* Color principal del thumb */
+    -fx-background-insets: 0;
+    -fx-background-radius: 8px; /* Bordes redondeados */
+    -fx-padding: 8px; /* Tamaño del thumb */
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 5, 0, 0, 1);
+    /*-fx-effect: linear-gradient(to right, #004AAD, #CB6CE6);*/
+
+
+}
+
+.scroll-bar .track {
+    -fx-background-color: rgb(35, 193, 160); /* Color de la pista */
+    -fx-background-radius: 8px; /* Bordes redondeados */
+}
+
+.scroll-bar .increment-button,
+.scroll-bar .decrement-button {
+    -fx-background-color: transparent;
+    -fx-background-radius: 0;
+    -fx-padding: 0;
+    -fx-shape: null; /* Quitar cualquier forma predeterminada */
+}
+
+.scroll-bar .increment-arrow,
+.scroll-bar .decrement-arrow {
+    -fx-background-color: transparent;
+}

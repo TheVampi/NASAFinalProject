@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="892.0" prefWidth="1425.0" style="-fx-background-color: linear-gradient(to bottom, #355C7D, #A98BAE);" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.nasafinalproject.MarsAPI.Controller.MarsAPIController">
+   <top>
+      <HBox alignment="CENTER" prefHeight="55.0" prefWidth="744.0" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fitHeight="89.0" fitWidth="98.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../images/NASA_logo.png" />
+               </image>
+            </ImageView>
+            <HBox alignment="CENTER" prefHeight="66.0" prefWidth="745.0">
+               <children>
+                  <Label alignment="CENTER" text="Mars Photo API v1" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font name="Tunga" size="36.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <ImageView fitHeight="67.0" fitWidth="157.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../images/MarsPerseveranceRed-Circle-Logo.png" />
+               </image>
+            </ImageView>
+         </children>
+      </HBox>
+   </top>
+   <opaqueInsets>
+      <Insets />
+   </opaqueInsets>
+   <right>
+      <VBox alignment="TOP_CENTER" prefHeight="578.0" prefWidth="383.0" spacing="10.0" style="-fx-background-color: rgba(0, 0, 0, 0.1); -fx-background-radius: 20px;" BorderPane.alignment="TOP_CENTER">
+         <children>
+            <Label text="Filtrar imágenes" textFill="WHITE">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <VBox alignment="TOP_CENTER" prefHeight="97.0" prefWidth="251.0" spacing="10.0">
+               <children>
+                  <Label text="Rover:" textFill="WHITE">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <HBox prefHeight="21.0" prefWidth="251.0">
+                     <children>
+                        <RadioButton fx:id="radioBtnPerseverance" mnemonicParsing="false" prefHeight="17.0" prefWidth="103.0" stylesheets="@../../../../../styles/MarsFiltersStyles.css" text="Perseverance" textFill="WHITE" />
+                        <RadioButton fx:id="radioBtnCuriosity" mnemonicParsing="false" stylesheets="@../../../../../styles/MarsFiltersStyles.css" text="Curiosity" textFill="WHITE" />
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="29.0" prefWidth="251.0">
+                     <children>
+                        <RadioButton fx:id="radioBtnOpportunity" mnemonicParsing="false" prefHeight="17.0" prefWidth="103.0" stylesheets="@../../../../../styles/MarsFiltersStyles.css" text="Opportunity" textFill="WHITE" />
+                        <RadioButton fx:id="radioBtnSpirit" mnemonicParsing="false" prefHeight="17.0" prefWidth="103.0" stylesheets="@../../../../../styles/MarsFiltersStyles.css" text="Spirit" textFill="WHITE" />
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <HBox prefHeight="45.0" prefWidth="335.0" spacing="10.0">
+               <children>
+                  <Label alignment="CENTER" text="Camara:" textFill="WHITE">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <ComboBox fx:id="comboCameras" prefHeight="25.0" prefWidth="263.0" promptText="Seleccione una cámara" stylesheets="@../../../../../styles/MarsFiltersStyles.css">
+
+<!--                     <items>-->
+<!--                        <FXCollections fx:factory="observableArrayList">-->
+<!--                           <String fx:value="EDL_RUCAM Rover Up-Look Camera" />-->
+<!--                           <String fx:value="EDL_RDCAM Rover Down-Look Camera" />-->
+<!--                           <String fx:value="EDL_DDCAM Descent Stage Down-Look Camera" />-->
+<!--                           <String fx:value="EDL_PUCAM1 Parachute Up-Look Camera A" />-->
+<!--                           <String fx:value="EDL_PUCAM2 Parachute Up-Look Camera B" />-->
+<!--                           <String fx:value="NAVCAM_LEFT Navigation Camera - Left" />-->
+<!--                           <String fx:value="NAVCAM_RIGHT Navigation Camera - Right" />-->
+<!--                           <String fx:value="MCZ_RIGHT Mast Camera Zoom - Right" />-->
+<!--                           <String fx:value="MCZ_LEFT Mast Camera Zoom - Left" />-->
+<!--                           <String fx:value="Front Hazard Avoidance Camera - Left" />-->
+<!--                           <String fx:value="FRONT_HAZCAM_RIGHT_A Front Hazard Avoidance Camera - Right" />-->
+<!--                           <String fx:value="REAR_HAZCAM_LEFT Rear Hazard Avoidance Camera - Left" />-->
+<!--                           <String fx:value="REAR_HAZCAM_RIGHT Rear Hazard Avoidance Camera - Right" />-->
+<!--                           <String fx:value="SKYCAM MEDA Skycam" />-->
+<!--                           <String fx:value="SHERLOC_WATSON SHERLOC WATSON Camera" />-->
+<!--                        </FXCollections>-->
+<!--                     </items>-->
+                  </ComboBox>
+               </children>
+            </HBox>
+            <HBox prefHeight="45.0" prefWidth="335.0" spacing="10.0">
+               <children>
+                  <Label alignment="CENTER" prefHeight="21.0" prefWidth="92.0" text="Día terrestre:" textFill="WHITE">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <DatePicker fx:id="datePickerEarth" promptText="Seleccione una fecha" stylesheets="@../../../../../styles/MarsFiltersStyles.css" />
+               </children>
+            </HBox>
+            <HBox prefHeight="45.0" prefWidth="335.0" spacing="10.0">
+               <children>
+                  <Label alignment="CENTER" prefHeight="21.0" prefWidth="113.0" text="Día sol (marte):" textFill="WHITE">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <Spinner fx:id="spinnerSolDay" editable="true" stylesheets="@../../../../../styles/MarsFiltersStyles.css" />
+               </children>
+            </HBox>
+            <Button fx:id="btnFilter" mnemonicParsing="false" onAction="#searchAndLoadImages" stylesheets="@../../../../../styles/MarsFiltersStyles.css" text="FILTRAR POR DIA TERRESTRE" />
+            <Button fx:id="btnFilterByMarsDays" mnemonicParsing="false" onAction="#searchAndLoadImagesByMarsDays" stylesheets="@../../../../../styles/MarsFiltersStyles.css" text="FILTRAR POR DIAS MARTE" />
+         </children>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding></VBox>
+   </right>
+   <bottom>
+      <VBox alignment="CENTER" prefHeight="192.0" prefWidth="1267.0" BorderPane.alignment="CENTER">
+         <children>
+            <HBox alignment="CENTER" prefHeight="2.0" prefWidth="946.0">
+               <children>
+                  <Label prefHeight="23.0" prefWidth="187.0" text="Datos de los rovers" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font name="Sitka Text" size="20.0" />
+                     </font>
+                  </Label>
+               </children>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+            </HBox>
+            <HBox prefHeight="117.0" prefWidth="1267.0">
+               <children>
+                  <VBox prefHeight="122.0" prefWidth="351.0">
+                     <children>
+                        <HBox alignment="CENTER" prefHeight="21.0" prefWidth="439.0">
+                           <children>
+                              <Label text="Perseverance" textFill="WHITE">
+                                 <font>
+                                    <Font name="Tunga" size="19.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="59.0" prefWidth="274.0" spacing="15.0">
+                           <children>
+                              <ImageView fitHeight="65.0" fitWidth="111.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../../images/Perseverance_rover.png" />
+                                 </image>
+                              </ImageView>
+                              <VBox prefHeight="92.0" prefWidth="255.0">
+                                 <children>
+                                    <Label prefHeight="19.0" prefWidth="209.0" text="Fecha de lanzamiento: 2020-07-30" textFill="WHITE" />
+                                    <Label prefHeight="19.0" prefWidth="245.0" text="Fecha de aterrizaje: 2021-02-18" textFill="WHITE" />
+                                    <Label prefHeight="19.0" prefWidth="242.0" text="Dias sol transcurridos en marte: 1147" textFill="WHITE" />
+                                    <Label prefHeight="19.0" prefWidth="242.0" text="Ultima actualizacion en la BD: 2024-05-11" textFill="WHITE" />
+                                    <Label prefHeight="19.0" prefWidth="242.0" text="Total de fotos capturadas: 218150" textFill="WHITE" />
+                                 </children>
+                              </VBox>
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="122.0" prefWidth="351.0">
+                     <children>
+                        <HBox alignment="CENTER" prefHeight="21.0" prefWidth="439.0">
+                           <children>
+                              <Label text="Curiosity" textFill="WHITE">
+                                 <font>
+                                    <Font name="Tunga" size="19.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="59.0" prefWidth="274.0" spacing="15.0">
+                           <children>
+                              <ImageView fitHeight="65.0" fitWidth="111.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../../images/Curiosity_rover.png" />
+                                 </image>
+                              </ImageView>
+                              <VBox prefHeight="92.0" prefWidth="255.0">
+                                 <children>
+                                    <Label prefHeight="19.0" prefWidth="209.0" text="Fecha de lanzamiento: 2020-07-30" textFill="WHITE" />
+                                    <Label prefHeight="19.0" prefWidth="245.0" text="Fecha de aterrizaje: 2021-02-18" textFill="WHITE" />
+                                    <Label prefHeight="19.0" prefWidth="242.0" text="Dias sol transcurridos en marte: 1147" textFill="WHITE" />
+                                    <Label prefHeight="19.0" prefWidth="242.0" text="Ultima actualizacion en la BD: 2024-05-11" textFill="WHITE" />
+                                    <Label prefHeight="19.0" prefWidth="242.0" text="Total de fotos capturadas: 218150" textFill="WHITE" />
+                                 </children>
+                              </VBox>
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="122.0" prefWidth="351.0">
+                     <children>
+                        <HBox alignment="CENTER" prefHeight="21.0" prefWidth="439.0">
+                           <children>
+                              <Label text="Opportunity" textFill="WHITE">
+                                 <font>
+                                    <Font name="Tunga" size="19.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="59.0" prefWidth="274.0" spacing="15.0">
+                           <children>
+                              <ImageView fitHeight="65.0" fitWidth="111.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../../images/Opportunity_rover.png" />
+                                 </image>
+                              </ImageView>
+                              <VBox prefHeight="92.0" prefWidth="255.0">
+                                 <children>
+                                    <Label prefHeight="19.0" prefWidth="209.0" text="Fecha de lanzamiento: 2020-07-30" textFill="WHITE" />
+                                    <Label prefHeight="19.0" prefWidth="245.0" text="Fecha de aterrizaje: 2021-02-18" textFill="WHITE" />
+                                    <Label prefHeight="19.0" prefWidth="242.0" text="Dias sol transcurridos en marte: 1147" textFill="WHITE" />
+                                    <Label prefHeight="19.0" prefWidth="242.0" text="Ultima actualizacion en la BD: 2024-05-11" textFill="WHITE" />
+                                    <Label prefHeight="19.0" prefWidth="242.0" text="Total de fotos capturadas: 218150" textFill="WHITE" />
+                                 </children>
+                              </VBox>
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="122.0" prefWidth="351.0">
+                     <children>
+                        <HBox alignment="CENTER" prefHeight="21.0" prefWidth="439.0">
+                           <children>
+                              <Label text="Spirit" textFill="WHITE">
+                                 <font>
+                                    <Font name="Tunga" size="19.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="59.0" prefWidth="274.0" spacing="15.0">
+                           <children>
+                              <ImageView fitHeight="65.0" fitWidth="111.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../../images/Spirit_rover.png" />
+                                 </image>
+                              </ImageView>
+                              <VBox prefHeight="92.0" prefWidth="255.0">
+                                 <children>
+                                    <Label prefHeight="19.0" prefWidth="209.0" text="Fecha de lanzamiento: 2020-07-30" textFill="WHITE" />
+                                    <Label prefHeight="19.0" prefWidth="245.0" text="Fecha de aterrizaje: 2021-02-18" textFill="WHITE" />
+                                    <Label prefHeight="19.0" prefWidth="242.0" text="Dias sol transcurridos en marte: 1147" textFill="WHITE" />
+                                    <Label prefHeight="19.0" prefWidth="242.0" text="Ultima actualizacion en la BD: 2024-05-11" textFill="WHITE" />
+                                    <Label prefHeight="19.0" prefWidth="242.0" text="Total de fotos capturadas: 218150" textFill="WHITE" />
+                                 </children>
+                              </VBox>
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
+               <children>
+                  <Button fx:id="btnLogOut" mnemonicParsing="false" stylesheets="@../../../../../styles/getback-button.css" text="Volver al selector de API'S" onAction="#getBack"/>
+               </children>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
+               <children>
+                  <Label fx:id="lblUserAndAPI" stylesheets="@../../../../../styles/UserAndAPIStyle.css" text="Usuario: GUEST     API Key: DEFAULT_KEY" textFill="WHITE" />
+               </children>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+            </HBox>
+         </children>
+      </VBox>
+   </bottom>
+   <center>
+      <VBox alignment="TOP_CENTER" prefHeight="481.0" prefWidth="1042.0" spacing="10.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label text="Galería de fotos" textFill="WHITE">
+               <font>
+                  <Font size="29.0" />
+               </font>
+            </Label>
+            <ScrollPane prefHeight="481.0" prefWidth="1042.0">
+                  <GridPane fx:id="gridMarsImages">
+                  </GridPane>
+            </ScrollPane>
+         </children>
+      </VBox>
+   </center>
+</BorderPane>

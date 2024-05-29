@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.control.ToolBar?>
+<?import org.kordamp.ikonli.javafx.FontIcon?>
+<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="-Infinity" prefWidth="800.0"
+            style="-fx-background-color: #000000"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="org.example.nasafinalproject.APOD.Controller.APOD_Controller">
+
+  <VBox fx:id="mainLayout"
+        alignment="TOP_CENTER" spacing="22.5" prefHeight="-Infinity" prefWidth="800.0"
+        style="-fx-background-color: #000000">
+
+    <padding>
+      <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+
+    </padding>
+
+    <ToolBar style="
+    -fx-background-color: linear-gradient(to right, #22063b ,#350576, #0e105d, #103069 ,#1d5775);
+    -fx-background-radius: 25px;
+    -fx-background-insets: 6px;
+    -fx-border-color: white;
+    -fx-border-insets: 5;
+    -fx-border-width: 1.5;
+    -fx-border-radius: 25px;
+    -fx-padding: 15px;">
+      <HBox alignment="CENTER" spacing="60">
+        <FontIcon fx:id="backIconBtn" iconLiteral="far-arrow-alt-circle-left" iconSize="35"
+                  iconColor="white" onMouseClicked="#onBackBtnClick" onMouseEntered="#onMouseEnteredBtn" onMouseExited="#onMouseExited"/>
+        <FontIcon fx:id="homeIconBtn" iconLiteral="fas-home" iconSize="35"
+                  iconColor="white" onMouseEntered="#onMouseEnteredBtn" onMouseExited="#onMouseExited"/>
+        <FontIcon fx:id="savedIconBtn" iconLiteral="fas-download" iconSize="25"
+                  iconColor="white" onMouseClicked="#onSavedBtnClick" onMouseEntered="#onMouseEnteredBtn" onMouseExited="#onMouseExited"/>
+        <FontIcon fx:id="queryIconBtn" iconLiteral="fas-search" iconSize="25"
+                  iconColor="white" onMouseClicked="#onApiQryBtnClick" onMouseEntered="#onMouseEnteredBtn" onMouseExited="#onMouseExited"/>
+        <FontIcon fx:id="reportIconBtn" iconLiteral="far-file-pdf" iconSize="25"
+                  iconColor="white" onMouseClicked="#onReportBtnClick" onMouseEntered="#onMouseEnteredBtn" onMouseExited="#onMouseExited"/>
+
+      </HBox>
+    </ToolBar>
+
+    <HBox fx:id="topBanner" style="-fx-background-color: #000000"
+          spacing="15"
+          prefWidth="780.0">
+
+      <ImageView
+              fx:id="bannerImage"
+              fitHeight="225.0"
+              fitWidth="300.0"
+              layoutX="61.0"
+              layoutY="83.0"
+              pickOnBounds="true"
+              preserveRatio="true">
+
+        <Image
+                url="https://upload.wikimedia.org/wikipedia/commons/e/e1/S68-27366.jpg"
+                backgroundLoading="true"/>
+
+      </ImageView>
+
+      <VBox spacing="35"  alignment="TOP_CENTER">
+        <padding>
+          <Insets bottom="13.0" left="13.0" right="13.0" top="13.0"/>
+        </padding>
+
+        <Label text="Astronomy Picture Of the Day!"
+               style="-fx-font-size: 30pt; -fx-text-fill: white; -fx-font-family: Cambria;">
+
+          <effect>
+            <Glow level="50"/>
+          </effect>
+        </Label>
+
+        <Label fx:id="bannerDescription"
+               style="-fx-font-size: 13.5pt; -fx-text-fill: white"
+               text="Discover the cosmos! Each day a different image or photograph of our fascinating universe is featured, along with a brief explanation written by a professional astronomer."
+               maxWidth="400"
+               wrapText="true"
+               textAlignment="CENTER">
+          <effect>
+            <Glow level="15"/>
+          </effect>
+
+        </Label>
+
+      </VBox>
+
+    </HBox>
+
+
+    <HBox fx:id="infoChart" style="-fx-background-color: #000000"
+          prefWidth="780.0"
+          spacing="105">
+
+      <padding>
+        <Insets bottom="13.0" left="13.0" right="13.0" top="13.0"/>
+      </padding>
+
+      <VBox spacing="35">
+
+        <Label text="What is the Astronomy Picture Of the Day (APOD)?"
+               maxWidth="450"
+               wrapText="true"
+               style="-fx-font-size: 17pt; -fx-text-fill: white; -fx-font-family: Cambria;">
+          <effect>
+            <Glow level="15"/>
+          </effect>
+        </Label>
+
+        <Label fx:id="infoText"
+               text="One of the most popular websites at NASA is the Astronomy Picture of the Day. In fact, this website is one of the most popular websites across all federal agencies. It has the popular appeal of a Justin Bieber video. This endpoint structures the APOD imagery and associated metadata so that it can be repurposed for other applications. In addition, if the concept_tags parameter is set to True, then keywords derived from the image explanation are returned. These keywords could be used as auto-generated hashtags for twitter or instagram feeds; but generally help with discoverability of relevant imagery."
+               style="-fx-font-size: 10.5pt; -fx-text-fill: white"
+               wrapText="true"
+               maxWidth="550"
+               textAlignment="JUSTIFY"/>
+      </VBox>
+
+      <HBox alignment="CENTER">
+
+        <ImageView
+                fx:id="sampleImage"
+                fitWidth="240.0"
+                layoutX="61.0"
+                layoutY="83.0"
+                pickOnBounds="true"
+                preserveRatio="true">
+          <Image
+                  url="https://apod.nasa.gov/apod/image/2405/SunAr3664_Menario_960.jpg"
+                  backgroundLoading="true"/>
+
+        </ImageView>
+      </HBox>
+    </HBox>
+
+    <Label text="Today's picture!"
+           style="-fx-text-fill: white; -fx-font-family: Georgia ; -fx-font-size: 40; -fx-font-weight: bold">
+      <effect>
+        <Glow level="1"/>
+      </effect>
+    </Label>
+
+    <VBox fx:id="contentChart" style="-fx-background-color: #000000"
+          prefWidth="780.0"
+          maxHeight="Infinity"
+          spacing="25"
+          alignment="CENTER">
+      <padding>
+        <Insets bottom="13.0" left="13.0" right="13.0" top="13.0"/>
+      </padding>
+
+      <Label fx:id="titleLabel"
+             style="-fx-text-fill: white; -fx-font-family: Cambria ; -fx-font-size: 20; -fx-font-weight: bold">
+        <effect>
+          <Glow level="15"/>
+        </effect>
+      </Label>
+      <Label fx:id="dateLabel"
+             style="-fx-text-fill: white; -fx-font-family: Cambria ; -fx-font-size: 15; -fx-font-weight: bold">
+        <effect>
+          <Glow level="15"/>
+        </effect>
+      </Label>
+      <HBox fx:id="image_apodChart" alignment="CENTER">
+        <ImageView
+                fx:id="imageView_TodayPic"
+                fitWidth="690.0"
+                layoutX="61.0"
+                layoutY="83.0"
+                pickOnBounds="true"
+                preserveRatio="true">
+        </ImageView>
+      </HBox>
+
+      <Label fx:id="explanationLabel" text="Explanation:"
+             style="-fx-text-fill: white; -fx-font-family: 'Cambria Math' ; -fx-font-size: 17; -fx-font-weight: bold">
+        <effect>
+          <Glow level="15"/>
+        </effect>
+      </Label>
+      <Group>
+        <Label fx:id="explanationText"
+               text="Northern lights don't usually reach this far south. Magnetic chaos in the Sun's huge Active Region 3664, however, produced a surface explosion that sent a burst of electrons, protons, and more massive, charged nuclei into the Solar System. A few days later, that coronal mass ejection (CME) impacted the Earth and triggered auroras that are being reported unusually far from our planet's north and south poles. The free sky show might not be over the sunspot rich AR3664 has ejected even more CMEs that might also impact the Earth tonight or tomorrow. That active region is now near the Sun's edge, though, and will soon be rotating away from the Earth. Pictured, a red and rayed aurora was captured in a single 6-second exposure from Racibórz, Poland early last night. The photographer's friend, seeing an aurora for the first time, is visible in the distance also taking images of the beautifully colorful nighttime sky."
+               style="-fx-font-size: 10.5pt; -fx-text-fill: white"
+               wrapText="true"
+               maxWidth="700"
+               textAlignment="JUSTIFY"/>
+      </Group>
+      <Button text="Store in database" onAction="#onStoreBtnClick">
+
+      </Button>
+    </VBox>
+  </VBox>
+
+</ScrollPane>
