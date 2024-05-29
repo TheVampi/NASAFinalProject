@@ -1,0 +1,85 @@
+/* General Styles */
+.root {
+    -fx-font-family: 'Roboto', sans-serif;
+    -fx-padding: 20;
+    -fx-background-color: #f5f5f5;
+}
+
+/* RadioButton Styles */
+.radio-button {
+    -fx-text-fill: #ffffff;
+}
+
+.radio-button .radio {
+    -fx-mark-color: #6200ee; /* Purple color */
+    -fx-mark-radius: 8;
+    -fx-padding: 5;
+}
+
+/* DatePicker Styles */
+.date-picker {
+    -fx-skin: "com.sun.javafx.scene.control.skin.DatePickerSkin";
+}
+
+.date-picker .arrow-button {
+    -fx-background-color: transparent;
+}
+
+.date-picker .arrow {
+    -fx-background-color: #6200ee; /* Purple color */
+}
+
+.date-picker .text-field {
+    -fx-control-inner-background: white;
+    -fx-prompt-text-fill: derive(-fx-control-inner-background, -30%);
+    -fx-highlight-fill: -fx-accent;
+    -fx-highlight-text-fill: white;
+    -fx-background-insets: 0 0 0 0;
+    -fx-padding: 5 3 5 3;
+    -fx-text-fill: #333333;
+    -fx-border-color: #6200ee; /* Purple color */
+    -fx-border-radius: 4;
+    -fx-background-radius: 4;
+}
+
+/* Spinner Styles */
+.spinner .increment-arrow-button, .spinner .decrement-arrow-button {
+    -fx-background-color: #6200ee; /* Purple color */
+    -fx-text-fill: white;
+}
+
+.spinner .increment-arrow, .spinner .decrement-arrow {
+    -fx-background-color: white;
+}
+
+.spinner .text-field {
+    -fx-control-inner-background: white;
+    -fx-prompt-text-fill: derive(-fx-control-inner-background, -30%);
+    -fx-highlight-fill: -fx-accent;
+    -fx-highlight-text-fill: white;
+    -fx-background-insets: 0 0 0 0;
+    -fx-padding: 5 3 5 3;
+    -fx-text-fill: #333333;
+    -fx-border-color: #6200ee; /* Purple color */
+    -fx-border-radius: 4;
+    -fx-background-radius: 4;
+}
+
+/* Button Styles */
+.button {
+    -fx-background-color: #6200ee; /* Purple color */
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 4;
+    -fx-padding: 10 20;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.2), 5, 0, 0, 1);
+}
+
+.button:hover {
+    -fx-background-color: #3700b3; /* Darker purple */
+}
+
+.button:pressed {
+    -fx-background-color: #6200ee; /* Original purple color */
+    -fx-effect: innershadow(three-pass-box, rgba(0, 0, 0, 0.2), 5, 0, 0, 1);
+}

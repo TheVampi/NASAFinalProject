@@ -1,0 +1,28 @@
+/* Estilo base para el botón */
+.button {
+    -fx-background-color: #ffffff; /* Fondo blanco */
+    -fx-text-fill: #6200ee; /* Texto morado */
+    -fx-font-size: 12px; /* Tamaño de fuente */
+    -fx-font-weight: bold; /* Negrita */
+    /*-fx-padding: 10px 20px; !* Relleno interno *!*/
+    -fx-border-color: #6200ee; /* Borde morado */
+    -fx-border-width: 2px; /* Ancho del borde */
+    -fx-border-radius: 5px; /* Esquinas redondeadas */
+    -fx-background-radius: 5px; /* Fondo redondeado */
+    -fx-cursor: hand; /* Cursor de mano */
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 5, 0, 0, 1); /* Sombra */
+    -fx-transition: background-color 0.3s, border-color 0.3s, color 0.3s; /* Transición suave */
+}
+
+/* Efecto hover */
+.button:hover {
+    -fx-background-color: #6200ee; /* Fondo morado */
+    -fx-text-fill: #ffffff; /* Texto blanco */
+    -fx-border-color: #ffffff; /* Borde blanco */
+}
+
+/* Efecto de clic */
+.button:pressed {
+    -fx-background-color: #3700b3; /* Fondo morado oscuro */
+    -fx-border-color: #3700b3; /* Borde morado oscuro */
+}

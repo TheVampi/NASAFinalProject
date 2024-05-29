@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import org.kordamp.ikonli.javafx.FontIcon?>
+<?import javafx.geometry.Insets?>
+<?import javafx.collections.FXCollections?>
+<BorderPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+            prefHeight="400.0" prefWidth="600.0" >
+    <padding>
+        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+    </padding>
+    <top>
+        <HBox>
+            <Label text="Modificar Usuario Seleccionado"></Label>
+        </HBox>
+    </top>
+    <center>
+        <VBox>
+            <HBox>
+                <Label text="Username: "></Label>
+                <TextField fx:id="txtusername" promptText="Ingrese el usuario"></TextField>
+            </HBox>
+            <HBox>
+                <Label text="Password: "></Label>
+                <TextField fx:id="txtpassword" promptText="Ingrese la contraseña"></TextField>
+            </HBox>
+            <HBox>
+                <Label text="NASA API Key: "></Label>
+                <TextField fx:id="txtAPIKey" promptText="Ingrese la API Key"></TextField>
+            </HBox>
+            <HBox>
+                <Label text="Es administrador? (1 para NO, 0 para NO): "></Label>
+                <TextField fx:id="txtisAdmin" promptText="Ingrese si es administrador"></TextField>
+            </HBox>
+        </VBox>
+
+    </center>
+    <bottom>
+        <HBox>
+            <Button fx:id="btnUpdateUser" text="Actualizar Cliente" onAction="#updateUser"></Button>
+            <Button fx:id="btnCancel" text="Regresar" onAction="#cancel"></Button>
+        </HBox>
+
+    </bottom>
+
+
+</BorderPane>

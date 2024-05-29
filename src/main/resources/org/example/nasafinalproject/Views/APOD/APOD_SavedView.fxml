@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.geometry.Insets?>
+
+<?import org.kordamp.ikonli.javafx.FontIcon?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import org.kordamp.bootstrapfx.scene.layout.Panel?>
+<ScrollPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="org.example.nasafinalproject.APOD.Controller.APODSavedController"
+            maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="Infinity" prefWidth="830.0"
+            style="-fx-background-color: #000000;">
+
+    <VBox fx:id="mainLayout"
+          alignment="TOP_CENTER" spacing="22.5" prefHeight="-Infinity" prefWidth="830.0"
+          style="-fx-background-color: #000000">
+
+        <padding>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+        </padding>
+
+        <ToolBar style="
+        -fx-background-color: linear-gradient(to right, #22063b ,#350576, #0e105d, #103069 ,#1d5775);
+        -fx-background-radius: 25px;
+        -fx-background-insets: 6px;
+        -fx-border-color: white;
+        -fx-border-insets: 5;
+        -fx-border-width: 1.5;
+        -fx-border-radius: 25px;
+        -fx-padding: 15px;">
+            <HBox alignment="CENTER" spacing="60">
+
+                <FontIcon fx:id="backIconBtn" iconLiteral="far-arrow-alt-circle-left" iconSize="35"
+                          iconColor="white" onMouseClicked="#onBackBtnClick" onMouseEntered="#onMouseEnteredBtn" onMouseExited="#onMouseExited"/>
+                <FontIcon fx:id="homeIconBtn" iconLiteral="fas-home" iconSize="35"
+                          iconColor="white" onMouseClicked="#onHomeBtnClick" onMouseEntered="#onMouseEnteredBtn" onMouseExited="#onMouseExited"/>
+                <FontIcon fx:id="savedIconBtn" iconLiteral="fas-download" iconSize="25"
+                          iconColor="white"  onMouseEntered="#onMouseEnteredBtn" onMouseExited="#onMouseExited"/>
+                <FontIcon fx:id="queryIconBtn" iconLiteral="fas-search" iconSize="25"
+                          iconColor="white" onMouseClicked="#onApiQryBtnClick" onMouseEntered="#onMouseEnteredBtn" onMouseExited="#onMouseExited"/>
+            </HBox>
+        </ToolBar>
+
+        <HBox fx:id="topBanner" style="-fx-background-color: #000000"
+              spacing="15"
+              prefWidth="780.0">
+
+            <ImageView
+                    fx:id="bannerImage"
+                    fitHeight="205.0"
+                    fitWidth="300.0"
+                    layoutX="61.0"
+                    layoutY="83.0"
+                    pickOnBounds="true"
+                    preserveRatio="true">
+
+                <!--Image
+                        url="https://upload.wikimedia.org/wikipedia/commons/e/e1/S68-27366.jpg"
+                        backgroundLoading="true"/-->
+                <Image url="https://apod.nasa.gov/apod/image/2211/WildTriplet_Hubble_3623.jpg"
+                       backgroundLoading="true"/>
+
+            </ImageView>
+
+            <VBox spacing="35"  alignment="TOP_CENTER">
+                <padding>
+                    <Insets bottom="13.0" left="13.0" right="13.0" top="13.0"/>
+                </padding>
+
+                <Label text="Astronomy Picture Of the Day!"
+                       style="-fx-font-size: 30pt; -fx-text-fill: white; -fx-font-family: Cambria;">
+
+                    <effect>
+                        <Glow level="50"/>
+                    </effect>
+                </Label>
+                <Group>
+                    <Label fx:id="bannerDescription"
+                           style="-fx-font-size: 13.5pt; -fx-text-fill: white"
+                           text="Discover the cosmos! Each day a different image or photograph of our fascinating universe is featured, along with a brief explanation written by a professional astronomer."
+                           maxWidth="400"
+                           wrapText="true"
+                           textAlignment="CENTER">
+                        <effect>
+                            <Glow level="15"/>
+                        </effect>
+                    </Label>
+                </Group>
+            </VBox>
+        </HBox>
+
+        <VBox alignment="TOP_CENTER" spacing="15" prefHeight="-Infinity" prefWidth="780" style="-fx-border-color: white;
+                        -fx-border-insets: 5;
+                        -fx-border-width: 1.5;
+                        -fx-border-radius: 25px;
+                        -fx-padding: 7px;">
+
+            <HBox spacing="30">
+                <Label text="Stored images "
+                       maxWidth="450"
+                       wrapText="true"
+                       style="-fx-font-size: 17pt; -fx-text-fill: white; -fx-font-family: Cambria;">
+                    <effect>
+                        <Glow level="1"/>
+                    </effect>
+                </Label>
+                <FontIcon fx:id="infoIconBtn" iconSize="30" iconLiteral="fas-info-circle" iconColor="white" onMouseClicked="#onTableRowClick"/>
+            </HBox>
+
+
+            <TableView minHeight="400" fx:id="tablePictures"  style="-fx-border-radius: 15px;
+                                                -fx-background-radius: 15px;
+                                                -fx-background-color: linear-gradient(to right, #22063b ,#350576, #0e105d, #103069 ,#1d5775);">
+                <columns>
+                    <TableColumn fx:id="ColDate" text ="DATE">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="date"/>
+                        </cellValueFactory>
+                    </TableColumn>
+                    <TableColumn fx:id="ColTitle" text ="TITLE">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="title"/>
+                        </cellValueFactory>
+                    </TableColumn>
+                    <TableColumn fx:id="ColMedia" text ="MEDIA TYPE">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="mediaType"/>
+                        </cellValueFactory>
+                    </TableColumn>
+                    <TableColumn fx:id="ColAuthor" text ="AUTHOR">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="copyright"/>
+                        </cellValueFactory>
+                    </TableColumn>
+                    <TableColumn fx:id="ColURL" text ="URL">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="url"/>
+                        </cellValueFactory>
+                    </TableColumn>
+                </columns>
+            </TableView>
+        </VBox>
+    </VBox>
+</ScrollPane>

@@ -1,0 +1,13 @@
+/* Label Styles for displaying user and API key */
+.label {
+    -fx-text-fill: white; /* White text */
+    -fx-background-color: #6200ee; /* Optional: Purple background */
+    /*-fx-padding: 5; !* Padding for spacing *!*/
+    -fx-font-size: 12px; /* Font size */
+    -fx-font-weight: bold; /* Bold text */
+    -fx-alignment: center; /* Center alignment */
+    -fx-border-color: #3700b3; /* Optional: Darker purple border */
+    -fx-border-width: 2; /* Border width */
+    -fx-border-radius: 5; /* Rounded corners */
+    -fx-background-radius: 5; /* Rounded background corners */
+}

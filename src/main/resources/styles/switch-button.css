@@ -1,0 +1,52 @@
+/* Estilo base del ToggleButton */
+.toggle-button {
+    -fx-background-color: transparent;
+    -fx-padding: 0;
+    -fx-cursor: hand;
+    -fx-background-radius: 15px;
+    -fx-border-radius: 15px;
+    -fx-min-width: 50px;
+    -fx-min-height: 25px;
+    -fx-pref-width: 50px;
+    -fx-pref-height: 25px;
+    -fx-border-color: transparent;
+    -fx-alignment: center-left;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 3, 0.5, 0, 0.5);
+    -fx-background-insets: 0;
+}
+
+/* Fondo del interruptor cuando no está seleccionado */
+.toggle-button {
+    -fx-background-color: #ff6b6b; /* Rojo claro */
+}
+
+/* Fondo del interruptor cuando está seleccionado */
+.toggle-button:selected {
+    -fx-background-color: #66bb6a; /* Verde claro */
+}
+
+/* Contenedor del thumb (Círculo) */
+.toggle-button .thumb-container {
+    -fx-background-color: transparent;
+    -fx-background-radius: 15px;
+    -fx-pref-width: 50px;
+    -fx-pref-height: 25px;
+    -fx-alignment: center-left;
+}
+
+/* Estilo del círculo (thumb) */
+.toggle-button .thumb {
+    -fx-background-color: white;
+    -fx-background-radius: 50%;
+    -fx-pref-width: 23px;
+    -fx-pref-height: 23px;
+    -fx-translate-x: 2;
+    -fx-translate-y: 1;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 5, 0, 0, 1);
+    -fx-alignment: center-left;
+}
+
+/* Movimiento del círculo cuando está seleccionado */
+.toggle-button:selected .thumb {
+    -fx-translate-x: 24; /* Ajusta según sea necesario */
+}
